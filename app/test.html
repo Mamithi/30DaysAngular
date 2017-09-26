@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
 <head>
-	<title>Finance Meter</title>
-</head>
-<body ng-controller="FinanceController">
-	<label>Your Salary?</label>
-	<input type="text" ng-model="salary">
-	<br>How much should you invest in gadgets?
-	<input type="text" ng-model="percentage" name="">%
-	<br>The amount to be spent in shopping will be :
-	<span>{{ result() | currency }}</span>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/controllers.js"></script>
+	<title>Testing Controllers</title>
+</head>
+<body ng-controller="GreetingController">
+	{{ greeting }} User! The current date/time is <span> {{ now | date:'medium' }}</span>
+	<br>
+	<button ng-click="getRandomHelloMsg()">Random Hello Message</button>
+	
 </body>
 </html>
