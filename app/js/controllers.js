@@ -1,9 +1,10 @@
-angular.module('myApp', []).controller('GreetingController', function($scope){
-	$scope.now = new Date();
-	$scope.helloMsgs = ["Hello", "Bonjour", 'Hola', 'Ciao', 'Hallo'];
-	$scope.greeting = $scope.helloMsgs[0];
+angular.module('myApp.controllers', []).controller('SiteController', function($scope){
+	$scope.publisher = 'SitePoint';
+	$scope.type = "Web Development";
+	$scope.name = "Scope for SiteController";
+});
 
-	$scope.getRandomHelloMsg = function(){
-		$scope.greeting = $scope.helloMsgs[parseInt((Math.random()*$scope.helloMsgs.length))];
-	}
+angular.module('myApp.controllers').controller('BookController', function($scope){
+	$scope.books = ['Jump Start HTML5', 'Jump Start CSS', 'Jump Start Responsive Web Design'];
+	$scope.name = "Scope for BookController";
 });
