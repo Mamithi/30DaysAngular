@@ -5,10 +5,15 @@ angular.module('myApp', ['myApp.controllers', 'ngRoute']);
 angular.module('myApp').config(function($routeProvider, $locationProvider){
 	$routeProvider.when('/view1', {
 		controller: 'Controller1',
-		templateUrl: '/view1.tpl'
+		templateUrl: 'partials/view1.html'
 	}).when('/view2/:firstname/:lastname', {
 		controller: 'Controller2',
-		templateUrl: '/view2.tpl'
+		templateUrl: '/partials/view2.html',
+		resolve: {
+			names: function(){
+				return ['Misko', 'Vojta', 'Brad'];
+			}
+		}
 	}).otherwise({redirectTo:'/view1'});
 	$locationProvider.html5Mode({
 		enabled: true,
