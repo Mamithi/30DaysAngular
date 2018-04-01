@@ -16,13 +16,29 @@
         <div class="page-header">
             <h1>Turtle Fact Quiz</h1>
             <h3>
-                Learn about all the turtles below before you decide to take on the
+                Learn about all the turtle below before you decide to take on the
                 <strong>TURTLE QUIZ</strong>
             </h3>
         </div>
 
         <div ng-controller="listCtrl as list">
-            {{ list.dummyData }}
+            <div class="row">
+                <div class="col-sm-6" ng-repeat="turtle in list.data">
+                    <div class="card card-cascade narrower" >
+                        <div class="view overlay">
+                            <img ng-src="{{ turtle.image_url }}" class="img-fluid img-responsive img-rounded" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{ turtle.type }}</h4>
+                            <p class="card-text"> <strong>Locations: </strong> {{ turtle.locations}}</p>
+                            <p class="card-text"><strong>Size: </strong>{{ turtle.size}}</p>
+                            <p class="card-text"><strong>Average Lifespan: </strong>{{ turtle.lifespan}}</p>
+                            <p class="card-text"><strong>Diet: </strong>{{ turtle.diet}}</p>
+                            <button class="btn btn-primary pull-right">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
