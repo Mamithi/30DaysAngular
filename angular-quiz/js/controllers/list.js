@@ -5,6 +5,12 @@
       var vm = this;
 
       vm.data = turtlesData;
+      vm.activeTurtle = {};
+      vm.changeActiveTurtle = changeActiveTurtle;
+
+      function changeActiveTurtle(index) {
+          vm.activeTurtle = index;
+      }
 
 
    }
