@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-user-item',
@@ -7,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserItemComponent implements OnInit {
 
-  name : string;  // Added name property
+  @Input() name : string;  // Added name property
 
   constructor() {
-    this.name ='Felipe'; //  Set the name
   }
 
   ngOnInit() {
