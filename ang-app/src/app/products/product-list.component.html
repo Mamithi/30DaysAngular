@@ -1,6 +1,6 @@
 <div class="card card-primary">
   <div class="card-heading">
-    Product List
+    {{ pageTitle }}
   </div>
   <div class="card-body">
     <div class="row">
@@ -16,12 +16,12 @@
       </div>
     </div>
     <div class="table-responsive">
-      <table class="table">
+      <table class="table" *ngIf='products && products.length'>
         <thead class="thead-light">
         <tr>
           <th scope="col">
-            <button class="btn btn-primary">
-              Show Image
+            <button class="btn btn-primary" (click) = 'toggleImage()'>
+             {{ showImage ? 'Hide' : 'Show'}} Image
             </button>
           </th>
           <th scope="col">Product</th>
@@ -32,10 +32,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-
-        </tr>
-
+          <tr *ngFor='let product of products'>
+            <td>
+              <img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName'
+                [style.width.px]='imageWidth' [style.margin.px]='imageMargin'
+              >
+            </td>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.productCode }}</td>
+            <td>{{ product.releaseDate }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.starRating }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
