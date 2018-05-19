@@ -2,7 +2,8 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: 'app-directive',
-    templateUrl: 'directive.component.html'
+    templateUrl: 'directive.component.html',
+    styleUrls: ['directive.component.css']
 })
 
 export class DirectiveComponent{
@@ -10,4 +11,13 @@ export class DirectiveComponent{
     public showElement = true;
     public color = 'blue';
     public colors = ['red', 'blue', 'green'];
+    public cone = true;
+    public ctwo=true;
+    public style='italic';
+    public size ='30px';
+
+    toggle(){
+        this.cone = !this.cone;
+        this.ctwo = !this.ctwo;
+    }
 }

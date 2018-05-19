@@ -1,5 +1,5 @@
 <h1>{{ title }}</h1>
-<p *ngIf="showElement">Show Element</p>
+<!-- <p *ngIf="showElement">Show Element</p>
 <div [ngSwitch]="color">
     <p *ngSwitchCase="'red'">Red Color is shown</p>
     <p *ngSwitchCase="'blue'">Blue Color is shown</p>
@@ -7,4 +7,7 @@
 </div>
 <ul *ngFor="let color of colors">
     <li>{{color}}</li>
-</ul>
+</ul> -->
+<p [ngClass]="{classOne:cone, classTwo:ctwo}">ngClass paragrapgh</p>
+<p [ngStyle]="{'font-style':style, 'font-size':size}">ngStyle Paragraph</p>
+<button (click)="toggle()">Toggle</button>
