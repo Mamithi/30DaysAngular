@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { EventComponet } from './event/event.component';
 import { BindComponent } from './2bind/2bind.component';
+import { DirectiveComponent } from './directive/directive.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TutorialComponent,
     EventComponet,
-    BindComponent
+    BindComponent,
+    DirectiveComponent
   ],
   imports: [
     BrowserModule,
