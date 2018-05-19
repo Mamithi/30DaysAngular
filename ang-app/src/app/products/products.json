@@ -1,0 +1,42 @@
+[
+{
+    "productId": 2,
+    "productName": "Garden Cart",
+    "productCode": "GDN-0023",
+    "releaseDate": "March 18, 2016",
+    "description": "15 gallon capacity",
+    "price": 32.99,
+    "starRating": 3.9,
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkTOaUS_dAKL2fmocinGtIIN_gVcJ8MlV8sSHIwauciwlBuTZA"
+  },
+  {
+    "productId": 5,
+    "productName": "Hammer",
+    "productCode": "TBX-0048",
+    "releaseDate": "March 21, 2016",
+    "description": "Good Condition",
+    "price": 8.99,
+    "starRating": 2.8,
+    "imageUrl": "https://images.homedepot-static.com/productImages/a619a055-6979-4b47-b0da-5dfa09d6ca2b/svn/hdx-claw-hammers-n-a10shd-64_1000.jpg"
+  },
+  {
+    "productId": 4,
+    "productName": "Garden Hoe",
+    "productCode": "HNK-0089",
+    "releaseDate": "May 11, 2016",
+    "description": "Just a good hoe",
+    "price": 10.99,
+    "starRating": 4.9,
+    "imageUrl": "https://images.homedepot-static.com/productImages/55afe55a-691d-4a21-898b-13c3206229fa/svn/ames-hoes-2825700-64_1000.jpg"
+  },
+  {
+    "productId": 4,
+    "productName": "Garden Fork",
+    "productCode": "GFG-0087",
+    "releaseDate": "October 11, 2017",
+    "description": "Good digging fork",
+    "price": 6.99,
+    "starRating": 3.6,
+    "imageUrl": "https://smhttp-ssl-17653.nexcesscdn.net/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/d/gds420.jpg"
+  }
+]

@@ -1,24 +1,24 @@
 export interface IProduct {
-  productId: number;
-  productName: string;
-  productCode: string;
-  releaseDate: string;
+  id: number;
+  name: string;
+  code: string;
+  release_date: string;
   price: number;
-  description: string;
-  starRating: number;
-  imageUrl: string;
+  desc: string;
+  rating: number;
+  image: string;
 }
 
 export class Product implements IProduct {
   constructor(
-    public productId: number,
-    public productName: string,
-    public productCode: string,
-    public releaseDate: string,
+    public id: number,
+    public name: string,
+    public code: string,
+    public release_date: string,
     public price: number,
-    public description: string,
-    public starRating: number,
-    public imageUrl: string,
+    public desc: string,
+    public rating: number,
+    public image: string,
   ) {}
 
   calculateDiscount(percent: number): number {

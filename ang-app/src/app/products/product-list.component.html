@@ -15,6 +15,7 @@
         <h3>Filtered By: {{listFilter}}</h3>
       </div>
     </div>
+    <h3>{{errorMessage}}</h3>
     <div class="table-responsive">
       <table class="table" *ngIf='products && products.length'>
         <thead class="thead-light">
@@ -34,16 +35,17 @@
         <tbody>
           <tr *ngFor='let product of products | productFilter:listFilter'>
             <td>
-              <img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName'
-                [style.width.px]='imageWidth' [style.margin.px]='imageMargin'
-              >
+              <img *ngIf='showImage' [src]='product.image' [title]='product.name'
+                [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
             </td>
-            <td>{{ product.productName }}</td>
-            <td>{{ product.productCode | lowercase}}</td>
-            <td>{{ product.releaseDate }}</td>
+            <td>
+              <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
+            </td>
+            <td>{{ product.code | lowercase}}</td>
+            <td>{{ product.date }}</td>
             <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
             <td>
-              <ai-star [rating]='product.starRating'
+              <ai-star [rating]='product.rating'
               (ratingClicked)='onRatingClicked($event)'
               ></ai-star>
             </td>
