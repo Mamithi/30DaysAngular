@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { EventComponet } from './event/event.component';
+import { BindComponent } from './2bind/2bind.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TutorialComponent,
-    EventComponet
+    EventComponet,
+    BindComponent
   ],
   imports: [
     BrowserModule,
