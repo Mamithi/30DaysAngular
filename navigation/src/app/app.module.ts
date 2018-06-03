@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from '@angular/common';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   // Basic routes
@@ -12,32 +16,42 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'contactus', redirectTo: 'contact'},
 
-  // authentication demo
-  { path: 'login', component: LoginComponent},
-  {
-    path: 'protected',
-    component: ProtectedComponent,
-    canActivate: [ LoggedInGuard]
-  },
+  // // authentication demo
+  // { path: 'login', component: LoginComponent},
+  // {
+  //   path: 'protected',
+  //   component: ProtectedComponent,
+  //   canActivate: [ LoggedInGuard]
+  // },
 
-  // nested
-  {
-    path: 'products',
-    component: ProductsComponent,
-    children: childRoutes
-  }
+  // // nested
+  // {
+  //   path: 'products',
+  //   component: ProductsComponent,
+  //   children: childRoutes
+  // }
 ];
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes),
+
+    // ProductsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy},
+    { provide: APP_BASE_HREF, useValue: '/' }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
