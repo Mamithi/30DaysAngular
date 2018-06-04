@@ -14,7 +14,8 @@ export class DemoFormComponent implements OnInit {
 
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({
-      'sku': ['', Validators.required]
+      'sku': ['', Validators.required],
+      'productName': ['', Validators.required]
     });
 
     this.sku = this.myForm.controls['sku'];
