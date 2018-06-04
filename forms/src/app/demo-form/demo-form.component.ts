@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder, FormGroup, Validators, AbstractControl, FormControl
 } from '@angular/forms';
+import { PriceService } from '../price.service';
 
 @Component({
   selector: 'app-demo-form',
