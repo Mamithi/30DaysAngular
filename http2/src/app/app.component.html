@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<button (click)='getData()'>Fetch Data</button>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th>User Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Website</th>
+    </tr>
+    <tr *ngFor="let user of data$ | async">
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.website }}</td>
+    </tr>
+  </tbody>
+</table>
