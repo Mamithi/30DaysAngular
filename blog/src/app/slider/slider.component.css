@@ -1,0 +1,13 @@
+.image { height: 400px; width: 100%; overflow: hidden;}
+.caption {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    color: white;
+    font-size: 30px;
+}
+
+.carousel-item {
+    position: relative;
+}

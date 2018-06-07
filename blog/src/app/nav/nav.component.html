@@ -1,8 +1,12 @@
-<div class="ui menu">
-  <a [routerLink]="['/home']" class="item">Home</a>
-  <a [routerLink]="['/about']" class="item">About Us</a>
-  <a [routerLink]="['/contact']" class="item">Contact Us</a>
+<div>
+    <nav class="nav nav-pills nav-justified">
+        <a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
+        <a [routerLink]="['/about']" routerLinkActive="active" class="nav-link">About Us</a>
+        <a [routerLink]="['/contact']" routerLinkActive="active" class="nav-link">Contact Us</a>
+      </nav>
 </div>
+
+
 <div>
   <router-outlet></router-outlet>
 </div>

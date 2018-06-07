@@ -9,6 +9,14 @@ import { ContactComponent } from './contact/contact.component';
 import { NavComponent } from './nav/nav.component';
 import { HeaderComponent } from './header/header.component';
 import { SliderComponent } from './slider/slider.component';
+import { PostComponent } from './post/post.component';
+import { ContentComponent } from './content/content.component';
+import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { PopularComponent } from './popular/popular.component';
+import { SocialComponent } from './social/social.component';
+import { SearchComponent } from './search/search.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 const routes: Routes = [
   // Basic routes
@@ -27,7 +35,15 @@ const routes: Routes = [
     ContactComponent,
     NavComponent,
     HeaderComponent,
-    SliderComponent
+    SliderComponent,
+    PostComponent,
+    ContentComponent,
+    FooterComponent,
+    SidebarComponent,
+    PopularComponent,
+    SocialComponent,
+    SearchComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
