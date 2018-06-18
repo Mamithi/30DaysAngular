@@ -17,14 +17,22 @@ import { PopularComponent } from './popular/popular.component';
 import { SocialComponent } from './social/social.component';
 import { SearchComponent } from './search/search.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { NewsComponent } from './news/news.component';
+import { PoliticsComponent } from './politics/politics.component';
+import { FinanceComponent } from './finance/finance.component';
+import { HealthComponent } from './health/health.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 const routes: Routes = [
   // Basic routes
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent},
+  { path: 'news', component: NewsComponent },
+  { path: 'politics', component: PoliticsComponent },
+  { path: 'finance', component: FinanceComponent },
+  { path: 'health', component: HealthComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'contactus', redirectTo: 'contact'},
+  { path: 'contactus', redirectTo: 'contact' },
 ];
 
 @NgModule({
@@ -43,7 +51,12 @@ const routes: Routes = [
     PopularComponent,
     SocialComponent,
     SearchComponent,
-    PaginationComponent
+    PaginationComponent,
+    NewsComponent,
+    PoliticsComponent,
+    FinanceComponent,
+    HealthComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
