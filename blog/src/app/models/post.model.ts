@@ -1,8 +1,8 @@
-// export class Post {
-//     data: Data
-// }
+export class Post {
+    data: Data
+}
 
-export class Post{
+export class Data{
     id: number;
     topic: string;
     title: string;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PoliticsPostService } from '../services/politics_post.service';
 
 @Component({
   selector: 'app-politics',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./politics.component.css']
 })
 export class PoliticsComponent implements OnInit {
+  data;
 
-  constructor() { }
+  constructor(private politics_post_service: PoliticsPostService) { }
 
   ngOnInit() {
+    this.politics_post_service.getPosts().subscribe(res => this.data = res.data);
   }
 
 }
