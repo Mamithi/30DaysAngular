@@ -1,38 +1,12 @@
 <div>
-   
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <th>Topic</th>
-                <th>Title</th>
-                <th>Content</th>
-            </tr>
-            <tr *ngFor='let post of data'>
-                <td>{{ post.id }}</td>
-                <td>{{ post.topic }}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.post_content }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
-
-
-
-
-
-
-    <!-- <app-slider></app-slider>
+      <app-slider></app-slider>
     <div class="row">
         <div class="col-md-8">
-            <app-content></app-content>
+            <app-content [posts]=data></app-content>
         </div>
         <div class="col-md-4">
             <app-sidebar></app-sidebar>
         </div>
     </div>
-    <app-pagination></app-pagination> -->
+    <app-pagination></app-pagination>
 </div>
