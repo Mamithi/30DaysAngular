@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +23,7 @@ import { PoliticsComponent } from './politics/politics.component';
 import { FinanceComponent } from './finance/finance.component';
 import { HealthComponent } from './health/health.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { PostService } from './services/post.service';
 
 const routes: Routes = [
   // Basic routes
@@ -56,13 +58,16 @@ const routes: Routes = [
     PoliticsComponent,
     FinanceComponent,
     HealthComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
