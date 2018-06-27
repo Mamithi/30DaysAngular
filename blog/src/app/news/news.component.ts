@@ -8,11 +8,13 @@ import { NewsPostService } from '../services/news_post.service';
 })
 export class NewsComponent implements OnInit {
   data;
+  title;
 
   constructor(private news_post_service: NewsPostService) { }
 
   ngOnInit() {
-    this.news_post_service.getPosts().subscribe(res => this.data = res.data)
+    this.news_post_service.getPosts().subscribe(res => this.data = res.data);
+    this.title = 'News'
   }
 
 }

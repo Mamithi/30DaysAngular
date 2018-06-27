@@ -8,11 +8,13 @@ import { PoliticsPostService } from '../services/politics_post.service';
 })
 export class PoliticsComponent implements OnInit {
   data;
+  title;
 
   constructor(private politics_post_service: PoliticsPostService) { }
 
   ngOnInit() {
     this.politics_post_service.getPosts().subscribe(res => this.data = res.data);
+    this.title = 'Politics';
   }
 
 }

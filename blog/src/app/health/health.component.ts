@@ -8,11 +8,13 @@ import { HealthPostService } from '../services/health_post.service';
 })
 export class HealthComponent implements OnInit {
   data;
+  title;
 
   constructor(private health_post_service: HealthPostService) { }
 
   ngOnInit() {
     this.health_post_service.getPosts().subscribe(res => this.data = res.data);
+    this.title = 'Health and Fitness';
   }
 
 }
