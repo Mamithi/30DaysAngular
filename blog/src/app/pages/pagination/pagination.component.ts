@@ -7,11 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PaginationComponent implements OnInit {
   @Input() links;
+  @Input() meta;
 
   constructor() { }
 
   ngOnInit() {
     this.links;
+    this.meta;
+  }
+
+  pages(n: number): any[] {
+    return Array(n);
   }
 
 }

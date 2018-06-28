@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostContentComponent implements OnInit {
   post;
+  topic;
 
   constructor(private single_post: SinglePostService, private route: ActivatedRoute) {
    }
@@ -16,6 +17,7 @@ export class PostContentComponent implements OnInit {
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.single_post.getPost(id).subscribe(res => this.post = res);
+
   }
 
   
