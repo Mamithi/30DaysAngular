@@ -24,7 +24,6 @@ import { FinanceComponent } from './pages/finance/finance.component';
 import { HealthComponent } from './pages/health/health.component';
 import { BreadcrumbsComponent } from './pages/breadcrumbs/breadcrumbs.component';
 import { PostService } from './services/post.service';
-import { ArticleComponent } from './pages/article/article.component';
 import { PostContentComponent } from './pages/post-content/post-content.component';
 
 const routes: Routes = [
@@ -37,7 +36,7 @@ const routes: Routes = [
   { path: 'health', component: HealthComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'contactus', redirectTo: 'contact' },
-  { path: 'read', component: ArticleComponent },
+  { path: 'post/:id', component: PostContentComponent}
 
 ];
 
@@ -63,7 +62,6 @@ const routes: Routes = [
     FinanceComponent,
     HealthComponent,
     BreadcrumbsComponent,
-    ArticleComponent,
     PostContentComponent,
   ],
   imports: [
