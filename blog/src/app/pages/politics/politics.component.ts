@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PoliticsPostService } from '../services/politics_post.service';
+import { PoliticsPostService } from '../../services/politics_post.service';
 
 @Component({
   selector: 'app-politics',
@@ -13,7 +13,7 @@ export class PoliticsComponent implements OnInit {
   constructor(private politics_post_service: PoliticsPostService) { }
 
   ngOnInit() {
-    this.politics_post_service.getPosts().subscribe(res => this.data = res.data);
+    this.politics_post_service.getPosts().subscribe((res : any)  => this.data = res.data);
     this.title = 'Politics';
   }
 

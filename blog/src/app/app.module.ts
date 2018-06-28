@@ -4,26 +4,28 @@ import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { NavComponent } from './nav/nav.component';
-import { HeaderComponent } from './header/header.component';
-import { SliderComponent } from './slider/slider.component';
-import { PostComponent } from './post/post.component';
-import { ContentComponent } from './content/content.component';
-import { FooterComponent } from './footer/footer.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { PopularComponent } from './popular/popular.component';
-import { SocialComponent } from './social/social.component';
-import { SearchComponent } from './search/search.component';
-import { PaginationComponent } from './pagination/pagination.component';
-import { NewsComponent } from './news/news.component';
-import { PoliticsComponent } from './politics/politics.component';
-import { FinanceComponent } from './finance/finance.component';
-import { HealthComponent } from './health/health.component';
-import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { NavComponent } from './pages/nav/nav.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { SliderComponent } from './pages/slider/slider.component';
+import { PostComponent } from './pages/post/post.component';
+import { ContentComponent } from './pages/content/content.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { SidebarComponent } from './pages/sidebar/sidebar.component';
+import { PopularComponent } from './pages/popular/popular.component';
+import { SocialComponent } from './pages/social/social.component';
+import { SearchComponent } from './pages/search/search.component';
+import { PaginationComponent } from './pages/pagination/pagination.component';
+import { NewsComponent } from './pages/news/news.component';
+import { PoliticsComponent } from './pages/politics/politics.component';
+import { FinanceComponent } from './pages/finance/finance.component';
+import { HealthComponent } from './pages/health/health.component';
+import { BreadcrumbsComponent } from './pages/breadcrumbs/breadcrumbs.component';
 import { PostService } from './services/post.service';
+import { ArticleComponent } from './pages/article/article.component';
+import { PostContentComponent } from './pages/post-content/post-content.component';
 
 const routes: Routes = [
   // Basic routes
@@ -35,6 +37,8 @@ const routes: Routes = [
   { path: 'health', component: HealthComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'contactus', redirectTo: 'contact' },
+  { path: 'read', component: ArticleComponent },
+
 ];
 
 @NgModule({
@@ -59,6 +63,8 @@ const routes: Routes = [
     FinanceComponent,
     HealthComponent,
     BreadcrumbsComponent,
+    ArticleComponent,
+    PostContentComponent,
   ],
   imports: [
     BrowserModule,
