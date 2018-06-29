@@ -25,20 +25,9 @@ import { HealthComponent } from './pages/health/health.component';
 import { BreadcrumbsComponent } from './pages/breadcrumbs/breadcrumbs.component';
 import { PostService } from './services/post.service';
 import { PostContentComponent } from './pages/post-content/post-content.component';
+import { AppRoutingModule } from './/app-routing.module';
 
-const routes: Routes = [
-  // Basic routes
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'politics', component: PoliticsComponent },
-  { path: 'finance', component: FinanceComponent },
-  { path: 'health', component: HealthComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'contactus', redirectTo: 'contact' },
-  { path: 'post/:id', component: PostContentComponent}
 
-];
 
 @NgModule({
   declarations: [
@@ -66,12 +55,13 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
-    HttpClientModule
+    AppRoutingModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     PostService
   ],
-  bootstrap: [AppComponent]
+bootstrap: [AppComponent]
 })
 export class AppModule { }
