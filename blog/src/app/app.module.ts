@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -26,6 +25,8 @@ import { BreadcrumbsComponent } from './pages/breadcrumbs/breadcrumbs.component'
 import { PostService } from './services/post.service';
 import { PostContentComponent } from './pages/post-content/post-content.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { AdminComponent } from './auth/admin/admin.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
@@ -52,6 +53,8 @@ import { AppRoutingModule } from './/app-routing.module';
     HealthComponent,
     BreadcrumbsComponent,
     PostContentComponent,
+    AdminComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
