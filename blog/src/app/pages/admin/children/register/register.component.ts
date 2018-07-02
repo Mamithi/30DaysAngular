@@ -28,8 +28,8 @@ export class RegisterComponent implements OnInit {
 
 
 
-  register() {
-    console.log(this.user);
-  }
+  // register() {
+  // //  this.user = new User("", "", "", "", "", "", "");
+  // }
 
 }

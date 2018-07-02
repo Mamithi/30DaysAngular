@@ -6,6 +6,6 @@ export class User {
         public telephone: string,
         public email: string,
         public password: string,
-        public password_confirmation?: string,
+        public password_confirmation: string,
     ) { }
 }
