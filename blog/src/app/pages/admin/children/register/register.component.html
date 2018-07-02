@@ -1,0 +1,55 @@
+<app-auth-header></app-auth-header>
+
+<div class="card">
+  <div lass="card-body">
+    <h5 class="card-title">Register</h5>
+    <form #registrationForm="ngForm">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="firstname">First Name</label>
+          <input type="text" class="form-control" id="firstname" placeholder="First Name" 
+          required [(ngModel)]="user.firstname" name="firstname">
+          TODO: remove this: {{ user.firstname }}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lastname">Last Name</label>
+          <input type="text" class="form-control" id="lastname" placeholder="Last Name"
+           required [(ngModel)]="user.lastname" name="lastname">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Country</label>
+        <input type="text" class="form-control" id="country" placeholder="Enter Country"
+         required [(ngModel)]="user.country" name="country">
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Phone Number</label>
+        <input type="text" class="form-control" id="telephone"  placeholder="Enter Phone Number" 
+        required [(ngModel)]="user.telephone" name="telephone">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email"  placeholder="Enter email" 
+        required [(ngModel)]="user.email" name="email">
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" 
+          required [(ngModel)]="user.password" name="password">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="exampleInputPassword1">Confirm Password</label>
+          <input type="password" class="form-control" id="password_confirmation" placeholder="Confirm Password"
+            [(ngModel)]="user.password_confirmation" name="password_confirmation">
+        </div>
+      </div>
+      <button (click)="register()" class="btn btn-primary btn-submit">Register</button>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

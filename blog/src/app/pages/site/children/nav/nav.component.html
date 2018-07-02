@@ -1,0 +1,13 @@
+<div>
+  <nav class="nav  nav-justified justify-content-center align-items-center">
+    <a [routerLink]="['/blog/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
+    <a [routerLink]="['/blog/news']" routerLinkActive="active" class="nav-link">News</a>
+    <a [routerLink]="['/blog/politics']" routerLinkActive="active" class="nav-link">Politics</a>
+    <a [routerLink]="['/blog/finance']" routerLinkActive="active" class="nav-link">Finance</a>
+    <a [routerLink]="['/blog/health']" routerLinkActive="active" class="nav-link">Health And Fitness</a>
+    <a [routerLink]="['/blog/contact']" routerLinkActive="active" class="nav-link">Contact Us</a>
+  </nav>
+</div>
+<div>
+    <router-outlet></router-outlet>
+  </div>
