@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../../../models/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { RegisterUserService } from '../../../../services/register-user.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   registrationForm;
-  constructor() { }
+  regResponse;
+
+  constructor(private register_service: RegisterUserService) { }
 
   ngOnInit() {
     this.registrationForm = new FormGroup({
@@ -17,7 +20,7 @@ export class RegisterComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
         // forbiddenNameValidator(/bob/i)
-      ])
+      ]),
     });
   }
 
@@ -25,9 +28,7 @@ export class RegisterComponent implements OnInit {
     return this.registrationForm.get('firstname');
   }
 
-  user = new User('John',
-    'Doe', 'Kenya', '+254705601827',
-    'test@gmail.com', '123456', '123456');
+  user = new User('','', '', '','', '', '');
 
   submitted = false;
 
@@ -40,8 +41,11 @@ export class RegisterComponent implements OnInit {
 
 
 
-  // register() {
-  // //  this.user = new User("", "", "", "", "", "", "");
-  // }
+  register() {
+    this.register_service.registerUser(this.user).subscribe(res => this.regResponse = res);
+    if(this.regResponse.status == 200){
+      this.onSubmit();
+    }
+  }
 
 }

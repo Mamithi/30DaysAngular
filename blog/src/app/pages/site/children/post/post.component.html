@@ -1,3 +1,21 @@
-<p>
-  post works!
-</p>
+<div>
+    <app-breadcrumbs [topic]="post.topic | lowercase"></app-breadcrumbs>
+  <div class="row">
+    <div class="col-md-8">
+       
+        <span class="badge badge-success topic">{{ post.topic | lowercase}}</span>
+        <p class="author">By: {{ post.author }}</p>
+        <p class="published">{{ post.published_at | date }}</p>
+      
+        <img class="image" [src]="post.image1" alt="">
+      
+        <div class="content">
+          {{ post.post_content }}
+        </div>
+    </div>
+    <div class="col-md-4">
+        <app-sidebar></app-sidebar>
+    </div>
+  </div>
+  
+</div>

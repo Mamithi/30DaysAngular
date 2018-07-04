@@ -12,6 +12,9 @@ import { SiteComponent } from './pages/site/site.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { RegisterComponent } from './pages/admin/children/register/register.component';
 import { LoginComponent } from './pages/admin/children/login/login.component';
+import { DashComponent } from './pages/dash/dash.component';
+import { LandingComponent } from './pages/dash/children/landing/landing.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
@@ -34,6 +37,7 @@ const routes: Routes = [
   },
 
   // Access routes
+  { path: 'admin', redirectTo: 'admin/login', pathMatch: 'full' },
   {
     path: 'admin',
     component: AdminComponent,
@@ -42,7 +46,18 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
     ]
   },
- 
+
+  
+  { path: 'dash', redirectTo: 'dash/landing', pathMatch: 'full' },
+  {
+    path: 'dash',
+    component: DashComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'landing', component: LandingComponent,  canActivate: [AuthGuard], }
+    ]
+  }
+
 
 ];
 

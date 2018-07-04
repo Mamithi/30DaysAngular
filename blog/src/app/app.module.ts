@@ -31,6 +31,9 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { RegisterComponent } from './pages/admin/children/register/register.component';
 import { AuthHeaderComponent } from './pages/admin/children/auth-header/auth-header.component';
 import { LoginComponent } from './pages/admin/children/login/login.component';
+import { DashComponent } from './pages/dash/dash.component';
+import { LandingComponent } from './pages/dash/children/landing/landing.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 
@@ -62,6 +65,8 @@ import { LoginComponent } from './pages/admin/children/login/login.component';
     RegisterComponent,
     AuthHeaderComponent,
     LoginComponent,
+    DashComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,8 @@ import { LoginComponent } from './pages/admin/children/login/login.component';
     FormsModule
   ],
   providers: [
-    PostService
+    PostService,
+    LoginComponent
   ],
 bootstrap: [AppComponent]
 })
