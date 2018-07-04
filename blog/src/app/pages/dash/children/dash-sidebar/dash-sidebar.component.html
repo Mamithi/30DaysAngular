@@ -1,0 +1,19 @@
+<nav id="sidebar">
+  <a routerLink="/dash/landing">Dashboard</a>
+  <ul class="list-unstyled components">
+    <li class="active">
+      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Posts</a>
+      <ul class="list-unstyled" id="homeSubmenu">
+        <li>
+          <a routerLink="/dash/add/post">New Post</a>
+        </li>
+        <li>
+          <a routerLink="/dash/published/posts">Published Posts</a>
+        </li>
+        <li>
+          <a routerLink="/dash/unpublished/posts">Unpublished Posts</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

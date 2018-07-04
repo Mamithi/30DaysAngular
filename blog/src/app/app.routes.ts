@@ -15,10 +15,13 @@ import { LoginComponent } from './pages/admin/children/login/login.component';
 import { DashComponent } from './pages/dash/dash.component';
 import { LandingComponent } from './pages/dash/children/landing/landing.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AddPostComponent } from './pages/dash/children/add-post/add-post.component';
+import { PublishedPostsComponent } from './pages/dash/children/published-posts/published-posts.component';
+import { UnpublishedPostsComponent } from './pages/dash/children/unpublished-posts/unpublished-posts.component';
 
 
 const routes: Routes = [
-  // Site route here
+  // Site route here for unauthenticated users
   { path: '', redirectTo: 'blog/home', pathMatch: 'full' },
   {
     path: 'blog',
@@ -47,14 +50,17 @@ const routes: Routes = [
     ]
   },
 
-  
+  // Dash board routes here for activated users
   { path: 'dash', redirectTo: 'dash/landing', pathMatch: 'full' },
   {
     path: 'dash',
     component: DashComponent,
-    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     children: [
-      { path: 'landing', component: LandingComponent,  canActivate: [AuthGuard], }
+      { path: 'landing', component: LandingComponent },
+      { path: 'add/post', component: AddPostComponent },
+      { path: 'published/posts', component: PublishedPostsComponent},
+      { path: 'unpublished/posts', component: UnpublishedPostsComponent},
     ]
   }
 

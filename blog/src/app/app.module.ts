@@ -33,8 +33,11 @@ import { AuthHeaderComponent } from './pages/admin/children/auth-header/auth-hea
 import { LoginComponent } from './pages/admin/children/login/login.component';
 import { DashComponent } from './pages/dash/dash.component';
 import { LandingComponent } from './pages/dash/children/landing/landing.component';
-import { AuthGuard } from './auth/auth.guard';
-import { HashEncodeService } from './services/hash-encode.service';
+import { DashHeaderComponent } from './pages/dash/children/dash-header/dash-header.component';
+import { DashSidebarComponent } from './pages/dash/children/dash-sidebar/dash-sidebar.component';
+import { AddPostComponent } from './pages/dash/children/add-post/add-post.component';
+import { PublishedPostsComponent } from './pages/dash/children/published-posts/published-posts.component';
+import { UnpublishedPostsComponent } from './pages/dash/children/unpublished-posts/unpublished-posts.component';
 
 
 
@@ -68,6 +71,11 @@ import { HashEncodeService } from './services/hash-encode.service';
     LoginComponent,
     DashComponent,
     LandingComponent,
+    DashHeaderComponent,
+    DashSidebarComponent,
+    AddPostComponent,
+    PublishedPostsComponent,
+    UnpublishedPostsComponent,
   ],
   imports: [
     BrowserModule,

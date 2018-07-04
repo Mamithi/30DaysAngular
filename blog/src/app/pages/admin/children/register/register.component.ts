@@ -20,7 +20,6 @@ export class RegisterComponent implements OnInit {
       'firstname': new FormControl(this.user.firstname, [
         Validators.required,
         Validators.minLength(4),
-        // forbiddenNameValidator(/bob/i)
       ]),
     });
   }
@@ -51,14 +50,14 @@ export class RegisterComponent implements OnInit {
         }
       },
       (err: HttpErrorResponse) => {
-          if(err.error instanceof Error){
-            console.log("Client side error occured")
-          }else{
-            console.log(err)
-          }
+        if (err.error instanceof Error) {
+          console.log("Client side error occured")
+        } else {
+          console.log(err)
+        }
       }
     );
-    
+
   }
 
 }
