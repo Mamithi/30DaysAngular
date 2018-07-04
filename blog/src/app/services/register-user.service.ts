@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
-import { CATCH_ERROR_VAR } from '@angular/compiler/src/output/abstract_emitter';
+import { HashEncodeService } from './hash-encode.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
+    'Content-Type': 'application/json',
   })
 };
 
@@ -16,12 +16,25 @@ const httpOptions = {
 export class RegisterUserService {
   apiAddress: string;
 
-  constructor(private http: HttpClient) { 
+  constructor(
+    private http: HttpClient,
+    private data: HashEncodeService,
+  ) {
     this.apiAddress = 'http://blog.test/api/v1/app/register';
   }
 
   registerUser(user: User): Observable<User> {
-      return this.http.post<User>(this.apiAddress, user, httpOptions);
+    let sentData = {
+      'payload': this.data.encodeData(user),
+      'hash': this.data.hashData(user)
+    };
+
+    return this.http.post<User>(this.apiAddress, sentData, httpOptions);
   }
+
+
+
+
+
 
 }

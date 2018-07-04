@@ -34,6 +34,7 @@ import { LoginComponent } from './pages/admin/children/login/login.component';
 import { DashComponent } from './pages/dash/dash.component';
 import { LandingComponent } from './pages/dash/children/landing/landing.component';
 import { AuthGuard } from './auth/auth.guard';
+import { HashEncodeService } from './services/hash-encode.service';
 
 
 

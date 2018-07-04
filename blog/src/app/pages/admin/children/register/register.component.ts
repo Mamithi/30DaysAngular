@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../../../models/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RegisterUserService } from '../../../../services/register-user.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -24,11 +25,11 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  get firstname(){
+  get firstname() {
     return this.registrationForm.get('firstname');
   }
 
-  user = new User('','', '', '','', '', '');
+  user = new User('', '', '', '', '', '', '');
 
   submitted = false;
 
@@ -42,10 +43,22 @@ export class RegisterComponent implements OnInit {
 
 
   register() {
-    this.register_service.registerUser(this.user).subscribe(res => this.regResponse = res);
-    if(this.regResponse.status == 200){
-      this.onSubmit();
-    }
+    this.register_service.registerUser(this.user).subscribe(
+      res => {
+        this.regResponse = res
+        if (this.regResponse.status == 200) {
+          this.onSubmit();
+        }
+      },
+      (err: HttpErrorResponse) => {
+          if(err.error instanceof Error){
+            console.log("Client side error occured")
+          }else{
+            console.log(err)
+          }
+      }
+    );
+    
   }
 
 }
