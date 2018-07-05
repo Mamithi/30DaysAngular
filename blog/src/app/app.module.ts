@@ -41,6 +41,7 @@ import { UnpublishedPostsComponent } from './pages/dash/children/unpublished-pos
 import { RegistrationValidatorDirective } from './directives/registration-validator.directive';
 import { UniqueEmailValidatorDirective } from './directives/unique-email-validator.directive';
 import { ValidTelephoneValidatorDirective } from './directives/valid-telephone-validator.directive';
+import { UniqueTelephoneValidatorDirective } from './directives/unique-telephone-validator.directive';
 
 
 
@@ -82,6 +83,7 @@ import { ValidTelephoneValidatorDirective } from './directives/valid-telephone-v
     RegistrationValidatorDirective,
     UniqueEmailValidatorDirective,
     ValidTelephoneValidatorDirective,
+    UniqueTelephoneValidatorDirective,
   ],
   imports: [
     BrowserModule,

@@ -51,8 +51,8 @@
 
         <div class="form-group">
           <label for="telephone">Phone Number</label>
-          <input type="text" class="form-control" id="telephone" placeholder="Enter Phone Number" [(ngModel)]="user.telephone"
-            name="telephone" #telephone="ngModel" required validTelephone>
+          <input type="text" class="form-control" id="telephone" placeholder="Enter Phone Number" [(ngModel)]="user.telephone" name="telephone"
+            #telephone="ngModel" required validTelephone uniqueTelephone (change)="validTelephone()">
 
           <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)" class="alert alert-danger">
             <div *ngIf="telephone.errors.required">
@@ -60,9 +60,15 @@
             </div>
 
             <div *ngIf="telephone.errors.validTelephone">
-                Invalid phone number
-              </div>
+              Invalid phone number
+            </div>
+
+            <div *ngIf="telephone.errors.uniqueTelephone">
+              Phone number already taken
+            </div>
           </div>
+
+
 
         </div>
 
