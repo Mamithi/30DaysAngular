@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
         this.invalid = false;
         this.router.navigate(['/dash/landing']);
         this.auth.setAccessToken(res.access_token);
+        this.auth.setExpiryTime(res.expires_in);
       },
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) {

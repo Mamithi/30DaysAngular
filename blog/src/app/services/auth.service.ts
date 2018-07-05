@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class AuthService {
   apiAddress: string;
- 
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -28,25 +28,44 @@ export class AuthService {
     return this.http.post<LoginData>(this.apiAddress, login_data, httpOptions);
   }
 
-  setAccessToken(access_token){
+  setAccessToken(access_token) {
     localStorage.setItem('access_token', access_token);
   }
 
+  setExpiryTime(expires_in) {
+    let now = new Date();
+    now.setSeconds(now.getSeconds() + expires_in);
+    localStorage['expiry_time'] = '' + now.getTime();
+  }
+
   get isLoggedIn() {
-    if(localStorage.getItem('access_token')){
-      return true;
-    }else{
+    if (localStorage.getItem('access_token')) {
+
+      let expiryDate: Date = new Date(parseInt(localStorage['expiry_time'], 10));
+      let now: Date = new Date();
+      if (expiryDate > now) {
+        return true;
+      } else {
+        this.router.navigate(['/admin/login']);
+        return false;
+      }
+
+    } else {
       this.router.navigate(['/admin/login']);
       return false;
     }
   }
 
-  logout(){
+
+
+
+  logout() {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('expiry_time');
     this.router.navigate(['/admin/login']);
   }
 
-  
+
 }
 
 
