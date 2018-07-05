@@ -18,13 +18,6 @@
                 First name is required
               </div>
 
-              <div *ngIf="firstname.errors.minlength">
-                First name must be at least 4 characters long
-              </div>
-
-              <div *ngIf="firstname.errors.forbiddenName">
-                First name cannot be Bob
-              </div>
             </div>
           </div>
 
@@ -39,8 +32,10 @@
 
         <div class="form-group">
           <label for="country">Country</label>
-          <input type="text" class="form-control" id="country" placeholder="Enter Country" required [(ngModel)]="user.country" name="country"
-            #country="ngModel">
+          <select class="form-control" id="country" required [(ngModel)]="user.country" name="country" 
+          #country="ngModel" data-live-search="true">
+            <option value="{{ country.key }}" *ngFor="let country of countries">{{ country.value }}</option>
+          </select>
 
           <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger">
             <div *ngIf="country.errors.required">
@@ -48,6 +43,7 @@
             </div>
           </div>
         </div>
+
 
         <div class="form-group">
           <label for="telephone">Phone Number</label>
@@ -106,8 +102,8 @@
               </div>
 
               <div *ngIf="password.errors.minlength">
-                  Password should be atleast {{ password.errors.minlength.requiredLength}} characters
-                </div>
+                Password should be atleast {{ password.errors.minlength.requiredLength}} characters
+              </div>
             </div>
 
           </div>
@@ -125,7 +121,7 @@
                 Passwords don't match
               </div>
 
-              
+
             </div>
 
 
