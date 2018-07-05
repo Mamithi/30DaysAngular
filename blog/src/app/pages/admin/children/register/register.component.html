@@ -56,20 +56,42 @@
             #email="ngModel">
           <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Please enter your email</div>
         </div>
+
+
         <div class="row">
           <div class="form-group col-md-6">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password" required [(ngModel)]="user.password" name="password"
               #password="ngModel">
-            <div [hidden]="password.valid || password.pristine" class="alert alert-danger">Please enter your password</div>
+
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+              <div *ngIf="password.errors.required">
+                Please enter your password
+              </div>
+            </div>
+
           </div>
           <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Confirm Password</label>
             <input type="password" class="form-control" id="password_confirmation" placeholder="Confirm Password" [(ngModel)]="user.password_confirmation"
-              name="password_confirmation" required #password_confirmation="ngModel">
-            <div [hidden]="password_confirmation.valid || password_confirmation.pristine" class="alert alert-danger">Please confirm your password</div>
+              name="password_confirmation" required #password_confirmation="ngModel" compare="password">
+
+            <div *ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched)" class="alert alert-danger">
+              <div *ngIf="password_confirmation.errors.required">
+                Please enter your password confirmation
+              </div>
+
+              <div *ngIf="password_confirmation.errors.compare">
+                  Passwords don't match
+                </div>
+            </div>
+
+
+
           </div>
         </div>
+
+
         <button type="submit" (click)="register(); registrationForm.reset()" class="btn btn-primary btn-submit" [disabled]="!registrationForm.form.valid">Register</button>
       </form>
     </div>

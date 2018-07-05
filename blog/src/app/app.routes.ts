@@ -59,8 +59,8 @@ const routes: Routes = [
     children: [
       { path: 'landing', component: LandingComponent },
       { path: 'add/post', component: AddPostComponent },
-      { path: 'published/posts', component: PublishedPostsComponent},
-      { path: 'unpublished/posts', component: UnpublishedPostsComponent},
+      { path: 'published/posts', component: PublishedPostsComponent },
+      { path: 'unpublished/posts', component: UnpublishedPostsComponent },
     ]
   }
 

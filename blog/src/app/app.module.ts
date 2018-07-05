@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/site/children/home/home.component';
@@ -38,6 +38,7 @@ import { DashSidebarComponent } from './pages/dash/children/dash-sidebar/dash-si
 import { AddPostComponent } from './pages/dash/children/add-post/add-post.component';
 import { PublishedPostsComponent } from './pages/dash/children/published-posts/published-posts.component';
 import { UnpublishedPostsComponent } from './pages/dash/children/unpublished-posts/unpublished-posts.component';
+import { RegistrationValidatorDirective } from './directives/registration-validator.directive';
 
 
 
@@ -76,12 +77,14 @@ import { UnpublishedPostsComponent } from './pages/dash/children/unpublished-pos
     AddPostComponent,
     PublishedPostsComponent,
     UnpublishedPostsComponent,
+    RegistrationValidatorDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     PostService,
