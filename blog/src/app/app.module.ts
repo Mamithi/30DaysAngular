@@ -40,6 +40,7 @@ import { PublishedPostsComponent } from './pages/dash/children/published-posts/p
 import { UnpublishedPostsComponent } from './pages/dash/children/unpublished-posts/unpublished-posts.component';
 import { RegistrationValidatorDirective } from './directives/registration-validator.directive';
 import { UniqueEmailValidatorDirective } from './directives/unique-email-validator.directive';
+import { ValidTelephoneValidatorDirective } from './directives/valid-telephone-validator.directive';
 
 
 
@@ -80,6 +81,7 @@ import { UniqueEmailValidatorDirective } from './directives/unique-email-validat
     UnpublishedPostsComponent,
     RegistrationValidatorDirective,
     UniqueEmailValidatorDirective,
+    ValidTelephoneValidatorDirective,
   ],
   imports: [
     BrowserModule,

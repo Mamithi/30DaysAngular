@@ -2,6 +2,7 @@
 
 <div [hidden]="submitted">
 
+  <div class="container"></div>
   <div class="card">
     <div lass="card-body">
       <h5 class="card-title">Register</h5>
@@ -50,13 +51,17 @@
 
         <div class="form-group">
           <label for="telephone">Phone Number</label>
-          <input type="text" class="form-control" id="telephone" placeholder="Enter Phone Number" required [(ngModel)]="user.telephone"
-            name="telephone" #telephone="ngModel">
+          <input type="text" class="form-control" id="telephone" placeholder="Enter Phone Number" [(ngModel)]="user.telephone"
+            name="telephone" #telephone="ngModel" required validTelephone>
 
           <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)" class="alert alert-danger">
             <div *ngIf="telephone.errors.required">
               Please enter your phone number
             </div>
+
+            <div *ngIf="telephone.errors.validTelephone">
+                Invalid phone number
+              </div>
           </div>
 
         </div>

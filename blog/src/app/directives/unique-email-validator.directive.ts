@@ -1,4 +1,4 @@
-import { Directive, Input } from '@angular/core';
+import { Directive } from '@angular/core';
 import { AsyncValidator, AbstractControl, ValidationErrors, NG_ASYNC_VALIDATORS } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -15,10 +15,7 @@ export class UniqueEmailValidatorDirective implements AsyncValidator {
   validate(c: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
     return this.checkEmail.checkUniqueEmail(c.value).pipe(
       map((res: any) => {
-        console.log(c.value);
-        console.log(res);
         return res.status === 400 ? { 'uniqueEmail': true } : null
-        // return res && res.length > 0? { 'uniqueEmail': true } : null
       })
     )
   }

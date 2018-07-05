@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -11,12 +10,13 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class CheckEmailService {
-  private apiAddress = 'http://blog.test/api/v1/app/check/email';
+export class ValidTelephoneService {
+  private apiAddress = 'http://blog.test/api/v1/app/valid/telephone';
+
 
   constructor(private http: HttpClient) { }
 
-  checkUniqueEmail(email){
-    return this.http.post(this.apiAddress, {"email" : email}, httpOptions)
+  validateTelephone(telephone){
+    return this.http.post(this.apiAddress, {"telephone" : telephone}, httpOptions)
   }
 }
