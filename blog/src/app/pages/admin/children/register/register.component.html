@@ -37,24 +37,49 @@
         </div>
 
         <div class="form-group">
-          <label for="telephone">Country</label>
+          <label for="country">Country</label>
           <input type="text" class="form-control" id="country" placeholder="Enter Country" required [(ngModel)]="user.country" name="country"
             #country="ngModel">
-          <div [hidden]="country.valid || country.pristine" class="alert alert-danger">Please enter your country</div>
+
+          <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger">
+            <div *ngIf="country.errors.required">
+              Please choose your country
+            </div>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="telephone">Phone Number</label>
           <input type="text" class="form-control" id="telephone" placeholder="Enter Phone Number" required [(ngModel)]="user.telephone"
             name="telephone" #telephone="ngModel">
-          <div [hidden]="telephone.valid || telephone.pristine" class="alert alert-danger">Please enter your phone number</div>
+
+          <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)" class="alert alert-danger">
+            <div *ngIf="telephone.errors.required">
+              Please enter your phone number
+            </div>
+          </div>
+
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" required [(ngModel)]="user.email" name="email"
-            #email="ngModel">
-          <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Please enter your email</div>
+          <input type="email" class="form-control" id="email" placeholder="Enter email" [(ngModel)]="user.email" name="email" #email="ngModel"
+            required email uniqueEmail>
+
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+            <div *ngIf="email.errors.required">
+              Please enter your email
+            </div>
+
+            <div *ngIf="email.errors.email">
+              Invalid email
+            </div>
+
+            <div *ngIf="email.errors.uniqueEmail">
+              Email already taken
+            </div>
+          </div>
+
         </div>
 
 
@@ -82,8 +107,8 @@
               </div>
 
               <div *ngIf="password_confirmation.errors.compare">
-                  Passwords don't match
-                </div>
+                Passwords don't match
+              </div>
             </div>
 
 

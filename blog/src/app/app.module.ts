@@ -39,6 +39,7 @@ import { AddPostComponent } from './pages/dash/children/add-post/add-post.compon
 import { PublishedPostsComponent } from './pages/dash/children/published-posts/published-posts.component';
 import { UnpublishedPostsComponent } from './pages/dash/children/unpublished-posts/unpublished-posts.component';
 import { RegistrationValidatorDirective } from './directives/registration-validator.directive';
+import { UniqueEmailValidatorDirective } from './directives/unique-email-validator.directive';
 
 
 
@@ -78,6 +79,7 @@ import { RegistrationValidatorDirective } from './directives/registration-valida
     PublishedPostsComponent,
     UnpublishedPostsComponent,
     RegistrationValidatorDirective,
+    UniqueEmailValidatorDirective,
   ],
   imports: [
     BrowserModule,
