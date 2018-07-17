@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SinglePostService } from '../../../../services/single-post.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
  
 
@@ -17,6 +18,7 @@ export class PostComponent implements OnInit {
   constructor( 
     private single_post: SinglePostService,
     private route: ActivatedRoute,
+    private location: Location,
   ) { }
 
   
@@ -24,5 +26,10 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.single_post.getPost(this.id).subscribe(res => this.post = res);
   }
+
+  goBack(): void{
+    this.location.back();
+  }
+  
 
 }

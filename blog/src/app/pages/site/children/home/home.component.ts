@@ -11,12 +11,28 @@ export class HomeComponent implements OnInit {
   links;
   meta;
 
-  constructor(private post_service: PostService) { }
+  constructor(
+    private post_service: PostService,
+  ) { }
 
   ngOnInit(): void {
     this.post_service.getPosts().subscribe((res : any) => this.data = res.data);
     this.post_service.getPosts().subscribe((res : any)  => this.links = res.links);
     this.post_service.getPosts().subscribe((res : any)  => this.meta = res.meta);
+
+    this.goToPageSelected(1);
   }
+
+  goToPageSelected(pageNumber: number){
+    if(pageNumber){
+      this.post_service.getPaginatedPosts(pageNumber).subscribe(
+        (res : any) =>
+        // console.log(res.data)
+         this.data = res.data
+        );
+    }
+  }
+
+
 }
 

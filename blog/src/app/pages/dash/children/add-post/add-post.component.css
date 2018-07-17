@@ -1,0 +1,9 @@
+.card {
+    width: 800px;
+    margin:auto;
+    margin: 30px 0px 0px 100px; 
+}
+
+.btn-submit{
+    float: right;
+}

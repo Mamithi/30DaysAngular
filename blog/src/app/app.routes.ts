@@ -28,6 +28,7 @@ const routes: Routes = [
     component: SiteComponent,
     children: [
       { path: 'home', component: HomeComponent },
+      { path: 'home/:id', component: HomeComponent },
       { path: 'news', component: NewsComponent },
       { path: 'politics', component: PoliticsComponent },
       { path: 'finance', component: FinanceComponent },
@@ -35,7 +36,7 @@ const routes: Routes = [
       { path: 'contact', component: ContactComponent },
       { path: 'contactus', redirectTo: 'contact' },
       { path: 'post/:id', component: PostComponent },
-      { path: 'page/:page', component: PaginationComponent },
+      { path: 'page/:id', component: PaginationComponent },
     ]
   },
 
