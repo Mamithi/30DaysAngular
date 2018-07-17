@@ -8,6 +8,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class PaginationComponent implements OnInit {
   @Input() links;
   @Input() meta;
+  @Input() page;
 
   @Output() sendPageNumberToParent = new EventEmitter<string>();
 
@@ -16,6 +17,7 @@ export class PaginationComponent implements OnInit {
   ngOnInit() {
     this.links;
     this.meta;
+   
   }
 
   pages(last_page: number): any[] {
@@ -23,7 +25,8 @@ export class PaginationComponent implements OnInit {
   }
 
   sendPaginationNumber(pageNumber: string){
-    this.sendPageNumberToParent.emit(pageNumber)
+    this.sendPageNumberToParent.emit(pageNumber);
+    console.log(this.page)
   }
 
 }

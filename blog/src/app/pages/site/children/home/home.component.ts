@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   data;
   links;
   meta;
+  page;
 
   constructor(
     private post_service: PostService,
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.post_service.getPosts().subscribe((res : any) => this.data = res.data);
     this.post_service.getPosts().subscribe((res : any)  => this.links = res.links);
     this.post_service.getPosts().subscribe((res : any)  => this.meta = res.meta);
-
+    this.page="home";
     this.goToPageSelected(1);
   }
 
@@ -27,7 +28,6 @@ export class HomeComponent implements OnInit {
     if(pageNumber){
       this.post_service.getPaginatedPosts(pageNumber).subscribe(
         (res : any) =>
-        // console.log(res.data)
          this.data = res.data
         );
     }

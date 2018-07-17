@@ -8,5 +8,5 @@
             <app-sidebar></app-sidebar>
         </div>
     </div>
-    <app-pagination [meta]=meta [links]=links (sendPageNumberToParent)="goToPageSelected($event)"></app-pagination>
+    <app-pagination [page]=page [meta]=meta [links]=links (sendPageNumberToParent)="goToPageSelected($event)"></app-pagination>
 </div>

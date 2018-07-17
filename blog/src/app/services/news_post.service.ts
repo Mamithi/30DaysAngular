@@ -17,4 +17,8 @@ export class NewsPostService {
   getPosts(): Observable<Array<Post>> {
     return this.http.get<Array<Post>>(this.apiAddress);
   }
+
+  getPaginatedPosts(pageNumber: number){
+    return this.http.get<Array<Post>>(this.apiAddress + '?page=' + pageNumber);
+  }
 }

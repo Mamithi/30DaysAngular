@@ -7,7 +7,6 @@ import { FinanceComponent } from './pages/site/children/finance/finance.componen
 import { HealthComponent } from './pages/site/children/health/health.component';
 import { ContactComponent } from './pages/site/children/contact/contact.component';
 import { PostComponent } from './pages/site/children/post/post.component';
-import { PaginationComponent } from './pages/site/children/pagination/pagination.component';
 import { SiteComponent } from './pages/site/site.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { RegisterComponent } from './pages/admin/children/register/register.component';
@@ -30,13 +29,16 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'home/:id', component: HomeComponent },
       { path: 'news', component: NewsComponent },
+      { path: 'news/:id', component: NewsComponent },
       { path: 'politics', component: PoliticsComponent },
+      { path: 'politics/:id', component: PoliticsComponent },
       { path: 'finance', component: FinanceComponent },
+      { path: 'finance/:id', component: FinanceComponent },
       { path: 'health', component: HealthComponent },
+      { path: 'health/:id', component: HealthComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'contactus', redirectTo: 'contact' },
       { path: 'post/:id', component: PostComponent },
-      { path: 'page/:id', component: PaginationComponent },
     ]
   },
 
