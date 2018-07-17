@@ -29,9 +29,7 @@ export class AddPostService {
   savePost(post: Post): Observable<Post> {
     let payload = this.data.encodeData(post);
     let hash = this.data.hashData(post);
-
-
-    console.log(post);
+    
     return this.http.post<Post>(
       this.apiAddress,
       {

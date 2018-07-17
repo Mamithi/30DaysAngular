@@ -2,3 +2,9 @@
     display: flex;
     align-items: stretch;
 }
+.table {
+    width: 1000px;
+    text-align: center;
+    padding: 200px;
+    
+}

@@ -3,11 +3,11 @@
     <li class="page-item disabled">
       <a class="page-link" href="#" tabindex="-1">Previous</a>
     </li>
-    <li class="page-item" *ngFor="let item of pages(meta.last_page); let i = index">
-      <a class="page-link"  routerLink="/blog/{{page}}/{{i+1}}" (click)="sendPaginationNumber(i+1)">{{i+1}}</a>
+    <li class="page-item" *ngFor="let item of pages(numberOfPages); let i = index">
+      <a class="page-link" routerLink="/blog/{{page}}/{{i+1}}" (click)="sendPaginationNumber(i+1)">{{i+1}}</a>
     </li>
     <li class="page-item">
-      <a class="page-link" routerLink="/page/{{links.next}}">Next</a>
+      <a class="page-link" routerLink="/blog/{{page}}/{{nextPage}}" (click)="goToNextPage()">Next</a>
     </li>
   </ul>
 </nav>

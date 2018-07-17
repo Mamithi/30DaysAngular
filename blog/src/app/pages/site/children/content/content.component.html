@@ -7,7 +7,7 @@
         <img class="card-img-top image" [src]="post.image1" alt="Card image cap">
     </div>    
     <div class="card-body col-md-7">
-      <p class="card-text">{{ (post.post_content.length > 850)?  (post.post_content | slice:0:850)+'...':(post.post_content)}}.</p>
+      <p class="card-text">{{ (post.post_content.length > 850)?  (post.post_content | slice:0:850)+'...':(post.post_content)}}</p>
       <a routerLink="/blog/post/{{post.id}}" class="btn btn-primary float-right btnMore">Read More</a>
     </div>  
   </div>
