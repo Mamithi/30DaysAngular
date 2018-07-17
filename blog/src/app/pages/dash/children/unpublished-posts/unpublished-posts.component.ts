@@ -16,9 +16,9 @@ export class UnpublishedPostsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.post_service.getUnpublishedPosts().subscribe(
-      (res: any) => this.posts = res.data
-    );
+    this.post_service.getUnpublishedPosts().subscribe((res: any) => this.posts = res.data);
+    this.post_service.getUnpublishedPosts().subscribe((res: any) => this.links = res.links);
+    this.post_service.getUnpublishedPosts().subscribe((res: any) => this.meta = res.meta);
   }
 
 }

@@ -19,16 +19,18 @@
               <th scope="row">{{post.id}}</th>
               <td>{{ post.topic | lowercase}}</td>
               <td>{{ post.title }}</td>
-              <td>{{ (post.post_content.length > 70)?  (post.post_content | slice:0:70)+'...':(post.post_content)}}</td>
+              <td>{{ (post.post_content.length > 70)? (post.post_content | slice:0:70)+'...':(post.post_content)}}</td>
               <td>
                 <button class="btn btn-success">More</button>
               </td>
             </tr>
           </tbody>
         </table>
-
+        <app-pagination [page]=page [meta]=meta [links]=links (sendPageNumberToParent)="goToPageSelected($event)"></app-pagination>
       </div>
     </div>
+
+
 
   </div>
 </div>

@@ -35,4 +35,8 @@ export class PostService {
     return this.http.get<Array<Post>>(this.baseUrl + '/auth/unpublished/posts', httpOptions);
   }
 
+  getPublishedPosts(): Observable<Array<Post>> {
+    return this.http.get<Array<Post>>(this.baseUrl + '/auth/published/posts', httpOptions);
+  }
+
 }

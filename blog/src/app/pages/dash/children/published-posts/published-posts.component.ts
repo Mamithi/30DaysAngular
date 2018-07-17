@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../../../../services/post.service';
 
 @Component({
   selector: 'app-published-posts',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./published-posts.component.css']
 })
 export class PublishedPostsComponent implements OnInit {
+  posts: any;
+  links: any;
+  meta: any;
 
-  constructor() { }
+  constructor(
+    private post_service: PostService
+  ) { }
 
   ngOnInit() {
+    this.post_service.getPublishedPosts().subscribe((res: any) => this.posts = res.data);
+    this.post_service.getPublishedPosts().subscribe((res: any) => this.links = res.links);
+    this.post_service.getPublishedPosts().subscribe((res: any) => this.meta = res.meta);
   }
 
 }
