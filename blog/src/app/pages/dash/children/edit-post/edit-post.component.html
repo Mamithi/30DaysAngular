@@ -1,0 +1,17 @@
+<app-dash-header></app-dash-header>
+<div class="wrapper">
+  <app-dash-sidebar></app-dash-sidebar>
+  <div id="content">
+      <div class="card">
+          <p class="card-title">Posted By: {{ post.author }}</p>
+          <p class="card-title">Posted On: {{ post.created_at | date }}</p>
+          <img class="card-img-top image" [src]="post.image1" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <hr>
+            <p class="card-text">{{ post.post_content }}</p>
+            <button class="btn btn-primary fas fa-arrow-left" (click)="goBack()">Back</button>
+          </div>
+        </div>
+  </div>
+</div>

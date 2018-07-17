@@ -21,7 +21,7 @@
               <td>{{ post.title }}</td>
               <td>{{ (post.post_content.length > 70)? (post.post_content | slice:0:70)+'...':(post.post_content)}}</td>
               <td>
-                <button class="btn btn-primary">Edit</button>
+                <button routerLink="/dash/published/posts/{{post.id}}" class="btn btn-primary">Edit</button>
               </td>
             </tr>
           </tbody>

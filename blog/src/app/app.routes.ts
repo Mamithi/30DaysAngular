@@ -17,6 +17,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AddPostComponent } from './pages/dash/children/add-post/add-post.component';
 import { PublishedPostsComponent } from './pages/dash/children/published-posts/published-posts.component';
 import { UnpublishedPostsComponent } from './pages/dash/children/unpublished-posts/unpublished-posts.component';
+import { EditPostComponent } from './pages/dash/children/edit-post/edit-post.component';
 
 
 const routes: Routes = [
@@ -63,11 +64,11 @@ const routes: Routes = [
       { path: 'landing', component: LandingComponent },
       { path: 'add/post', component: AddPostComponent },
       { path: 'published/posts', component: PublishedPostsComponent },
+      { path: 'published/posts/:id', component: EditPostComponent },
       { path: 'unpublished/posts', component: UnpublishedPostsComponent },
+      { path: 'unpublished/posts/:id', component: EditPostComponent },
     ]
   }
-
-
 ];
 
 

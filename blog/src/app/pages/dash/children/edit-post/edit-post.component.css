@@ -1,0 +1,16 @@
+.image {
+    margin-left: 30px; 
+    height: auto;
+    max-height: 400px;
+    max-width: 800px;
+    width: 100%;
+    color: aqua;   
+    border-radius: 0.2em;
+    background-color: #E9F7FE;
+    padding: 5px;
+    border-color: #DADADA;
+    border-style: solid;
+    border-width: thin;
+    font-size: 15px
+
+}

@@ -42,6 +42,7 @@ import { RegistrationValidatorDirective } from './directives/registration-valida
 import { UniqueEmailValidatorDirective } from './directives/unique-email-validator.directive';
 import { ValidTelephoneValidatorDirective } from './directives/valid-telephone-validator.directive';
 import { UniqueTelephoneValidatorDirective } from './directives/unique-telephone-validator.directive';
+import { EditPostComponent } from './pages/dash/children/edit-post/edit-post.component';
 
 
 
@@ -84,6 +85,7 @@ import { UniqueTelephoneValidatorDirective } from './directives/unique-telephone
     UniqueEmailValidatorDirective,
     ValidTelephoneValidatorDirective,
     UniqueTelephoneValidatorDirective,
+    EditPostComponent,
   ],
   imports: [
     BrowserModule,
