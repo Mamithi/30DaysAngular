@@ -11,7 +11,7 @@ import { LoginData } from '../../../../models/login.model';
 })
 export class LoginComponent implements OnInit {
   client_id = 2;
-  client_secret = '7cnhjQXEO6gdSQEY7j6iym8OZVwwb2VV0Q6XxmQL';
+  client_secret = 'qWjy2nz9hKORlmXp0v8YJNmM5xqPgufhlK2WrojH';
   scope = '*';
   grant_type = 'password'
   invalid = false;
