@@ -25,8 +25,24 @@ export class AppComponent {
   sendData() {
 
     const message = {
-      'password' : '1234567890',
-      'email' : '19lawrence93@gma',
+      // 'amount' : 1,
+      // 'telephone' : '0705601827',
+      // 'account_no' : 'KE1234567',
+      // 'paybill' : 346666,
+
+      // 'email' : '19lawrence93@gmail.com',
+      // 'password' : '123456789'
+
+      // 'uuid' : '9ab5d1cf-5589-45a5-a140-57141a9a9ccb',
+      // 'one_time_password' : '3AEB8D8003C1394B'
+
+      // 'telephone' : '0705601827',
+      // 'country' : 'KE'
+
+      'client_id' : 2,
+      'client_secret' : 'dL8Jl0I0QSsCssFwqhtfhfTxKMw15PZjWxjrnTi3',
+      'email' : 'user@tospay.net',
+      'password' : 'foobar',
     };
     const messageJson = JSON.stringify(message);
 
@@ -73,17 +89,20 @@ export class AppComponent {
     // Data to be sent to server
     const payload = encryptKey + 'llmwns' + data.ciphertext + 'llmwns' + data.salt + 'llmwns' + data.iv;
 
-    // console.log(payload);
+    console.log(payload);
 
-    this.http.post('http://auth.tospay.example/api/v1/register/email', { 'payload': payload }).subscribe(
+    // this.http.post('https://dev.ingabo.tospay.net/api/v1/login', { 'payload': payload }).subscribe(
+    this.http.post('http://ukash.tospay.test/api/v1/stk/topup', { 'payload': payload }).subscribe(
+    // this.http.post('http://ukash.tospay.test/api/v1/login', { 'payload': payload }).subscribe(
+    // this.http.get('http://auth.tospay.example/api/v1/identity/types').subscribe(
       res => {
         this.response = res;
 
+        console.log(this.response);
+
         const resp = this.decryptService.decryptResponse(this.response.payload);
 
-
-
-        console.log(resp);
+        // console.log(resp);
 
       },
       (err: HttpErrorResponse) => {

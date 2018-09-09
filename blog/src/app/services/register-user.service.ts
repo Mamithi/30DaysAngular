@@ -24,7 +24,7 @@ export class RegisterUserService {
   }
 
   registerUser(user: User): Observable<User> {
-    let sentData = {
+    const sentData = {
       'payload': this.data.encodeData(user),
       'hash': this.data.hashData(user)
     };

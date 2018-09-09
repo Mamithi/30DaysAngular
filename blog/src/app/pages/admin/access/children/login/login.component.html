@@ -1,0 +1,49 @@
+<app-auth-header></app-auth-header>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Log In</h5>
+
+    <div [hidden]="!invalid_credentials">
+      <div class="alert alert-danger" role="alert">
+        Invalid Credentials.
+      </div>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Email</label>
+        <input type="email" class="form-control" formControlName="username" id="username">
+
+        <div *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)"
+          class="alert alert-danger">
+
+          <div *ngIf="loginForm.controls['username'].errors.required">
+            First name is required
+          </div>
+
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="password" id="password">
+
+        <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+          class="alert alert-danger">
+
+          <div *ngIf="loginForm.controls['password'].errors.required">
+            First name is required
+          </div>
+
+        </div>
+
+      </div>
+      <button type="submit" (click)="login(); loginForm.reset()" class="btn btn-primary btn-submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+
+  </div>
+</div>
+
+
+<app-footer></app-footer>

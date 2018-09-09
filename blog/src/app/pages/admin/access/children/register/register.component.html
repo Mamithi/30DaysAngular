@@ -1,0 +1,132 @@
+<app-auth-header></app-auth-header>
+
+
+
+  <div class="container"></div>
+  <div class="card">
+    <div lass="card-body">
+      <h5 class="card-title">Register</h5>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="firstname">First Name</label>
+            <input class="form-control" formControlName="firstname" id="firstname">
+            <div *ngIf="registerForm.controls['firstname'].invalid && (registerForm.controls['firstname'].dirty || registerForm.controls['firstname'].touched)" class="alert alert-danger">
+
+              <div *ngIf="registerForm.controls['firstname'].errors.required">
+                First name is required
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="form-group col-md-6">
+            <label for="lastname">Last Name</label>
+            <input class="form-control" formControlName="lastname" id="lastname">
+
+            <div *ngIf="registerForm.controls['lastname'].invalid && (registerForm.controls['lastname'].dirty || registerForm.controls['lastname'].touched)" class="alert alert-danger">
+
+              <div *ngIf="registerForm.controls['lastname'].errors.required">
+                Last name is required
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select class="form-control" id="country" formControlName="country">
+            <option value="{{ country.key }}" *ngFor="let country of countries">{{ country.value }}</option>
+          </select>
+
+          <div *ngIf="registerForm.controls['country'].invalid && (registerForm.controls['country'].dirty || registerForm.controls['country'].touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls['country'].errors.required">
+              Please choose your country
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="telephone">Phone Number</label>
+          <input class="form-control" formControlName="telephone" id="telephone">
+
+          <div *ngIf="registerForm.controls['telephone'].invalid && (registerForm.controls['telephone'].dirty || registerForm.controls['telephone'].touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls['telephone'].errors.required">
+              Please enter your phone number
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" formControlName="email">
+
+          <div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls['email'].errors.required">
+              Please enter your email
+            </div>
+
+            <div *ngIf="registerForm.controls['email'].errors.email">
+              Invalid email
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+
+            <div *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)" class="alert alert-danger">
+              <div *ngIf="registerForm.controls['password'].errors.required">
+                Please enter your password
+              </div>
+
+              <div *ngIf="registerForm.controls['password'].errors.minlength">
+                Password should be atleast {{ registerForm.controls['password'].errors.minlength.requiredLength}} characters
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" class="form-control" required formControlName="password_confirmation">
+
+            <div *ngIf="registerForm.controls['password_confirmation'].invalid && (registerForm.controls['password_confirmation'].dirty || registerForm.controls['password_confirmation'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registerForm.controls['password_confirmation'].errors.required">
+                Please enter your password confirmation
+              </div>
+
+              <div *ngIf="registerForm.controls['password_confirmation'].errors.compare">
+                Passwords don't match
+              </div>
+
+
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+        <button type="submit" (click)="register(); registerForm.reset()" class="btn btn-primary btn-submit"
+          [disabled]="!registerForm.valid">Register</button>
+
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+<app-footer></app-footer>
