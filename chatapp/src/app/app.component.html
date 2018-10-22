@@ -1,0 +1,14 @@
+<label>
+  Message:
+  <input type="text" [formControl]="message" />
+</label>
+<br><br>
+<button (click)="sendMessage()">Send Message</button>
+<hr>
+
+<div *ngIf="messages">
+  <h4>Messages</h4>
+  <div *ngFor="let message of messages">
+    <p>{{ message}}</p>
+  </div>
+</div>

@@ -25,24 +25,24 @@ export class AppComponent {
   sendData() {
 
     const message = {
-      // 'amount' : 1,
-      // 'telephone' : '0705601827',
-      // 'account_no' : 'KE1234567',
-      // 'paybill' : 346666,
+      'amount' : 10,
+      'source' : 'WALLET',
+      'firstname' : 'John',
+      'lastname' : 'Doe',
+      'country' : 'KE',
+      'service' : '63902',
+      'telephone' : '+254705601827'
 
-      // 'email' : '19lawrence93@gmail.com',
-      // 'password' : '123456789'
-
-      // 'uuid' : '9ab5d1cf-5589-45a5-a140-57141a9a9ccb',
-      // 'one_time_password' : '3AEB8D8003C1394B'
-
-      // 'telephone' : '0705601827',
+      // 'amount' : 200,
+      // 'account_no' : 'KE22222222',
+      // 'source' : 'wallet',
+      // 'dest_channel' : 'wallet',
       // 'country' : 'KE'
 
-      'client_id' : 2,
-      'client_secret' : 'dL8Jl0I0QSsCssFwqhtfhfTxKMw15PZjWxjrnTi3',
-      'email' : 'user@tospay.net',
-      'password' : 'foobar',
+      // 'client_id' : 2,
+      // 'client_secret' : 'dL8Jl0I0QSsCssFwqhtfhfTxKMw15PZjWxjrnTi3',
+      // 'email' : 'user@tospay.net',
+      // 'password' : 'foobar',
     };
     const messageJson = JSON.stringify(message);
 
