@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsPostService } from '../../../../../services/news_post.service';
+import { PostService } from '../../../../../services/post.service';
 
 @Component({
   selector: 'app-news',
@@ -13,19 +13,21 @@ export class NewsComponent implements OnInit {
   links;
   page;
 
-  constructor(private news_post_service: NewsPostService) { }
+  constructor(private post_service: PostService) { }
 
   ngOnInit() {
-    this.news_post_service.getPosts().subscribe((res: any)  => this.data = res.data);
-    this.news_post_service.getPosts().subscribe((res: any) => this.meta = res.meta);
-    this.news_post_service.getPosts().subscribe((res: any) => this.links = res.links);
+    this.post_service.getNewsPosts().subscribe((res: any)  => {
+      this.data = res.data;
+      this.meta = res.meta;
+      this.links = res.links;
+    });
     this.title = 'News';
     this.page = 'news';
   }
 
   goToPageSelected(pageNumber: number) {
     if (pageNumber) {
-      this.news_post_service.getPaginatedPosts(pageNumber).subscribe(
+      this.post_service.getPaginatedPosts(pageNumber).subscribe(
         (res: any) =>
          this.data = res.data
         );

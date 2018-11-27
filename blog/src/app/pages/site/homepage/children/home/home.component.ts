@@ -18,9 +18,11 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.post_service.getPosts().subscribe((res: any) => this.data = res.data);
-    this.post_service.getPosts().subscribe((res: any) => this.links = res.links);
-    this.post_service.getPosts().subscribe((res: any) => this.meta = res.meta);
+    this.post_service.getPosts().subscribe((res: any) => {
+      this.data = res.data;
+      this.links = res.links;
+      this.meta = res.meta;
+    });
     this.page = 'home';
     this.goToPageSelected(1);
   }
@@ -32,6 +34,10 @@ export class HomeComponent implements OnInit {
           this.data = res.data
       );
     }
+  }
+
+  fetchSearchedPosts() {
+    console.log('Helooooooooooooooooooooooooooo');
   }
 
 

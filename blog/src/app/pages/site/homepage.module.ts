@@ -24,11 +24,13 @@ import { SocialComponent } from './homepage/children/social/social.component';
 import { HeaderComponent } from './homepage/children/header/header.component';
 import { SiteComponent } from './homepage/site.component';
 import { PostContentComponent } from './homepage/children/post-content/post-content.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     HomePageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HomeComponent,

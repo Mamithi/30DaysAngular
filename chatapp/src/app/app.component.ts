@@ -13,7 +13,7 @@ window.Echo = window.Echo;
 
 window.Echo = new Echo({
   broadcaster: 'socket.io',
-  host: 'http://auth.tospay.test:6001',
+  host: 'http://chatapp.test:6002',
   // auth: {
   //   headers: {
   //     Authorization : 'Bearer ' + localStorage.getItem('access_token')
@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
     title = 'app';
     message = new FormControl('');
     messages: any;
+    tests = ['hello', 'there'];
 
     constructor(
       private msg: MessagesService

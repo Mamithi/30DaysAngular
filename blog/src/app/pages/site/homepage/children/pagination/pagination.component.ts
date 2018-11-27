@@ -17,16 +17,14 @@ export class PaginationComponent implements OnInit {
    numberOfPages: number;
 
 
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.links;
-    // this.meta;
-    this.goToNextPage();
   }
 
   pages(numberOfPages): any[] {
-    return Array(this.numberOfPages = this.meta.last_page);
+    return Array(numberOfPages = this.meta.last_page);
   }
 
   sendPaginationNumber(pageNumber: number) {

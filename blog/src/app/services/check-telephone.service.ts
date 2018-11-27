@@ -16,7 +16,7 @@ export class CheckTelephoneService {
 
   constructor(private http: HttpClient) { }
 
-  checkUniqueTelephone(telephone){
-    return this.http.post(this.apiAddress, {"telephone" : telephone}, httpOptions)
+  checkUniqueTelephone(telephone) {
+    return this.http.post(this.apiAddress, {'telephone' : telephone}, httpOptions);
   }
 }

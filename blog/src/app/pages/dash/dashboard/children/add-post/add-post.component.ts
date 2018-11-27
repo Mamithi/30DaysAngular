@@ -1,6 +1,6 @@
 import { Post } from './../../../../../models/post.model';
 import { HandleImagesService } from './../../../../../services/handle-images.service';
-import { AddPostService } from './../../../../../services/add-post.service';
+import { PostService } from './../../../../../services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -21,7 +21,7 @@ export class AddPostComponent implements OnInit {
   imageUrl3: string | any;
 
   constructor(
-    private save_post_service: AddPostService,
+    private post_service: PostService,
     private handle_images: HandleImagesService,
   ) { }
 
@@ -36,7 +36,7 @@ export class AddPostComponent implements OnInit {
     this.post.image1 = this.imageUrl1;
     this.post.image2 = this.imageUrl2;
     this.post.image3 = this.imageUrl3;
-    this.save_post_service.savePost(this.post).subscribe(
+    this.post_service.savePost(this.post).subscribe(
       (res: any) => {
         console.log(res);
       },

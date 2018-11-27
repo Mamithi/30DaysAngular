@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FinancePostService } from '../../../../../services/finance_post.service';
+import { PostService } from '../../../../../services/post.service';
 
 
 @Component({
@@ -14,12 +14,14 @@ export class FinanceComponent implements OnInit {
   links;
   page;
 
-  constructor(private finance_post_service: FinancePostService) { }
+  constructor(private post_service: PostService) { }
 
   ngOnInit() {
-    this.finance_post_service.getPosts().subscribe((res: any)  => this.data = res.data);
-    this.finance_post_service.getPosts().subscribe((res: any) => this.meta = res.meta);
-    this.finance_post_service.getPosts().subscribe((res: any) => this.links = res.links);
+    this.post_service.getFinancePosts().subscribe((res: any)  => {
+      this.data = res.data;
+      this.meta = res.meta;
+      this.links = res.links;
+    });
     this.title = 'Finance';
     this.page = 'finance';
 
@@ -28,7 +30,7 @@ export class FinanceComponent implements OnInit {
 
   goToPageSelected(pageNumber: number) {
     if (pageNumber) {
-      this.finance_post_service.getPaginatedPosts(pageNumber).subscribe(
+      this.post_service.getPaginatedPosts(pageNumber).subscribe(
         (res: any) =>
          this.data = res.data
         );

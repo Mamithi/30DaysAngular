@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SinglePostService } from '../../../../../services/single-post.service';
+import { PostService } from '../../../../../services/post.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -15,13 +15,13 @@ export class PostComponent implements OnInit {
   post;
   id = +this.route.snapshot.paramMap.get('id');
   constructor(
-    private single_post: SinglePostService,
+    private post_service: PostService,
     private route: ActivatedRoute,
     private location: Location,
   ) { }
 
   ngOnInit() {
-    this.single_post.getPost(this.id).subscribe(res => this.post = res);
+    this.post_service.getPost(this.id).subscribe(res => this.post = res);
   }
 
   goBack(): void {

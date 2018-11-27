@@ -16,9 +16,11 @@ export class PublishedPostsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.post_service.getPublishedPosts().subscribe((res: any) => this.posts = res.data);
-    this.post_service.getPublishedPosts().subscribe((res: any) => this.links = res.links);
-    this.post_service.getPublishedPosts().subscribe((res: any) => this.meta = res.meta);
+    this.post_service.getPublishedPosts().subscribe((res: any) => {
+      this.posts = res.data;
+      this.links = res.links;
+      this.meta = res.meta;
+    });
   }
 
 }

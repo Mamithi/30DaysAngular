@@ -1,4 +1,6 @@
 <div class="input-group search">
-    <input class="form-control"
-           placeholder="Search...">
-  </div>
+  <form [formGroup]="searchForm">
+    <input class="form-control" placeholder="Search..." formControlName="search_query">
+    <app-content [posts]=posts></app-content>
+  </form>
+</div>

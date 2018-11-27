@@ -1,26 +1,46 @@
 <div>
-    <app-breadcrumbs [topic]="post.topic | lowercase"></app-breadcrumbs>
+  <app-breadcrumbs [topic]="post.topic | lowercase"></app-breadcrumbs>
   <div class="row">
     <div class="col-md-8">
-       
-        <span class="badge badge-success topic">{{ post.topic | lowercase}}</span>
-        <p class="author">By: {{ post.author }}</p>
-        <p class="published">{{ post.published_at | date }}</p>
-      
-        <img class="image" [src]="post.image1" alt="">
-      
-        <div class="content">
-          {{ post.post_content }}
-        </div>
 
-        <button class="btn btn-primary float-right fas fa-arrow-left" (click)="goBack()">Back</button>
+      <span class="badge badge-success topic">{{ post.topic | lowercase}}</span>
+      <p class="author">By: {{ post.author }}</p>
+      <p class="published">{{ post.published_at | date }}</p>
+
+      <img class="image" [src]="post.image1" alt="">
+
+      <div class="content">
+        {{ post.post_content }}
+      </div>
+
+      <div class="bl-comment-container" *ngFor="let comment of post.comments">
+        <div class="bl-user">
+          <div class="bl-user-avatar">
+            <img src="../../../../../../assets/images/person.png" alt="">
+          </div>
+          <div class="bl-user-name">
+            <h3>{{ comment.username }}</h3>
+          </div>
+        </div>
+        <div class="bl-comment">
+          <p>
+            " {{ comment.comment }} "
+          </p>
+        </div>
+        <div class="bl-comment-time">
+          <span> {{ comment.created_at }}</span>
+        </div>
+      </div>
+
+
+      <button class="btn btn-primary float-right fas fa-arrow-left" (click)="goBack()">Back</button>
 
     </div>
     <div class="col-md-4">
-        <app-sidebar></app-sidebar>
+      <app-sidebar></app-sidebar>
     </div>
   </div>
-  
-  
+
+
 
 </div>

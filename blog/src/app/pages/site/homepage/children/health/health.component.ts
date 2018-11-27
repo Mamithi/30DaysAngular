@@ -1,4 +1,4 @@
-import { HealthPostService } from './../../../../../services/health_post.service';
+import { PostService } from './../../../../../services/post.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,12 +13,14 @@ export class HealthComponent implements OnInit {
   meta;
   page;
 
-  constructor(private health_post_service: HealthPostService) { }
+  constructor(private post_service: PostService) { }
 
   ngOnInit() {
-    this.health_post_service.getPosts().subscribe((res: any) => this.data = res.data);
-    this.health_post_service.getPosts().subscribe((res: any) => this.meta = res.meta);
-    this.health_post_service.getPosts().subscribe((res: any) => this.links = res.links);
+    this.post_service.getHealthPosts().subscribe((res: any) =>  {
+      this.data = res.data;
+      this.meta = res.meta;
+      this.links = res.links;
+      });
     this.title = 'Health and Fitness';
     this.page = 'health';
 
@@ -27,7 +29,7 @@ export class HealthComponent implements OnInit {
 
   goToPageSelected(pageNumber: number) {
     if (pageNumber) {
-      this.health_post_service.getPaginatedPosts(pageNumber).subscribe(
+      this.post_service.getPaginatedPosts(pageNumber).subscribe(
         (res: any) =>
          this.data = res.data
         );

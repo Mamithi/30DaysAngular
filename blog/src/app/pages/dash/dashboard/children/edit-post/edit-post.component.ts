@@ -1,4 +1,4 @@
-import { SinglePostService } from './../../../../../services/single-post.service';
+import { PostService } from './../../../../../services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -14,12 +14,12 @@ export class EditPostComponent implements OnInit {
   constructor(
     private location: Location,
     private route: ActivatedRoute,
-    private single_post: SinglePostService,
+    private post_service: PostService,
   ) { }
 
   ngOnInit() {
     console.log(this.id);
-    this.single_post.getPost(this.id).subscribe(res => this.post = res);
+    this.post_service.getPost(this.id).subscribe(res => this.post = res);
 
   }
 
