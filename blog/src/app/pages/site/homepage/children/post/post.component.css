@@ -40,6 +40,51 @@
 
 }
 
+.bl-comment-form {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 90%;
+  justify-content: center;
+  grid-row-gap: 1.25rem;
+  padding: 3rem 0;
+}
+
+.bl-input-name, .bl-input-email, .bl-input-comment {
+  width: 100%;
+}
+
+.bl-input-name, .bl-input-email, .bl-input-comment, .bl-add-btn {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(250, 250, 250, 0.9);
+  border:0.1rem solid rgba(233, 224, 224, 0.9);;
+  outline:none;
+}
+
+.bl-input-comment{
+  height: 10rem;
+}
+
+.bl-input-name::placeholder, .bl-input-email::placeholder, .bl-input-comment::placeholder {
+  color:var(--brown);
+  text-transform: capitalize;
+  opacity: 0.3;
+}
+
+.bl-add-btn {
+  background: rgba(54, 145, 231, 0.9);
+  color: #FFF;
+  transition: all 0.5s linear;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.bl-add-btn:hover {
+  opacity: 0.8;
+}
+
+
 .bl-comment-container {
  display: grid;
  margin: 2rem;

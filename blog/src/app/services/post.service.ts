@@ -5,6 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { HashEncodeService } from './hash-encode.service';
 import { catchError } from 'rxjs/operators';
 
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -18,6 +19,7 @@ const httpOptions = {
 
 
 export class PostService {
+  jsonData = require('../../assets/json/default.json');
   baseUrl: string;
   data: Array<Post> = [];
 
@@ -25,7 +27,7 @@ export class PostService {
     private http: HttpClient,
     private payloadData: HashEncodeService
     ) {
-    this.baseUrl = 'http://blog.test/api/v1/app';
+    this.baseUrl = this.jsonData.baseUrl;
   }
 
   savePost(post: Post): Observable<Post> {
@@ -99,6 +101,21 @@ export class PostService {
 
   searchPosts(searchQuery): Observable<Array<Post>> {
     return this.http.post<Array<Post>>(this.baseUrl + '/search', {'search_query': searchQuery}).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  addComment(comment) {
+    const payload = this.payloadData.encodeData(comment);
+    const hash = this.payloadData.hashData(comment);
+
+    return this.http.post(
+      this.baseUrl + '/comment',
+      {
+        'payload': payload,
+        'hash': hash,
+      }
+    ).pipe(
       catchError(this.handleError)
     );
   }

@@ -13,6 +13,29 @@
         {{ post.post_content }}
       </div>
 
+      <!-- Add a comment -->
+      <div>
+        <form [formGroup]="commentForm" class="bl-comment-form">
+          <div>
+              <input type="text" formControlName="username" id="username" class="bl-input-name" placeholder="John Doe">
+          </div>
+
+          <div>
+              <input type="email" formControlName="email" id="email" class="bl-input-email"  placeholder="john@gmail.com">
+          </div>
+
+          <div>
+            <textarea formControlName="comment" id="comment" class="bl-input-comment" placeholder="Comment here..."></textarea>
+          </div>
+
+          <input type="hidden" value="{{post.id}}" id="post_id" formControlName="post_id">{{post.id}}
+
+          <button class="bl-add-btn" (click)="saveComment()">Add Comment</button>
+        </form>
+      </div>
+
+
+
       <div class="bl-comment-container" *ngFor="let comment of post.comments">
         <div class="bl-user">
           <div class="bl-user-avatar">
@@ -28,7 +51,7 @@
           </p>
         </div>
         <div class="bl-comment-time">
-          <span> {{ comment.created_at }}</span>
+          <span> {{ comment.created_at | date }}</span>
         </div>
       </div>
 
